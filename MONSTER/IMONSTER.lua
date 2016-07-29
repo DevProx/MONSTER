@@ -211,7 +211,7 @@ end
 function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
-    enabled_plugins = {
+  enabled_plugins = {
     "admin",
     "onservice",
     "inrealm",
@@ -258,7 +258,7 @@ function create_config( )
     "lockspamer1",
     "lockzahif",
     "lockzahif1",
-    "lockmedia"
+    "lockmedia",
     "time",
     "spinfo",
     "ingroup",
@@ -308,7 +308,7 @@ function create_config( )
     "tagall",
     "sh",
     "serverinfo"
-    },
+  },
     sudo_users = { 0,tonumber(our_id)},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[DEV @XViper]],
