@@ -1,27 +1,28 @@
 --[[ 
 ▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀ 
 ▀▄ ▄▀                                      ▀▄ ▄▀ 
-      by member oscar team @XVIPER
+      by member oscar team @XVIPER 
     -----OSCAR TEAM 
       please join to Channel Oscar Team @oscarteam 
-    Plugin ; lock link with warn  
+    Plugin ; lock link with warn 
 
 ▀▄ ▄▀                                      ▀▄ ▄▀ 
 ▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀ 
 --]] 
 do 
 
-local function pre_process(msg)
-local monster = msg['id']
-local rash = 'XVIPERO:'..msg.to.id
-local link = msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm]%.[Mm][Ee]/") or msg.text:match("[Tt][Ll][Gg][Rr][Mm]%.[Mm][Ee]/") or msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm]%.[Oo][Rr][Gg]") or msg.text:match("[Gg][Oo][Oo]%.[Gg][Li]/") or msg.text:match("[Aa][Dd][Ff]%.[Ll][Yy]/") or msg.text:match("[Bb][Ii][Tt]%.[Ll][Yy]") or msg.text:match("[Cc][Ff]%.[Ll][Yy]/") or msg.text:match("[Bb][Vv]%.[Vv][Cc]/") or msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm]%.[Mm][Ee]")
-local bot = msg.text:match("?[Ss][Tt][Aa][Rr][Tt]=") or msg.text:match("?[Ss][Tt][Oo][Pp]=")
-            if link and redis:get(rash) and not bot then
-            delete_msg(msg.id, ok_cb, true)
-            local dea = "عزيزي~{"..msg.from.first_name.."}".."\n".."👿✋يمنع نشر (قنوات - اعلانات - روابط - مواقع) التزم بالقوانين".."\n".."⭐username: @"..(msg.from.username or " ") 
+local function pre_process(msg) 
+local monster = msg['id'] 
+local rash = 'XVIPERO:'..msg.to.id 
+local link = msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm]%.[Mm][Ee]/") or msg.text:match("[Tt][Ll][Gg][Rr][Mm]%.[Mm][Ee]/") or msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm]%.[Oo][Rr][Gg]") or msg.text:match("[Gg][Oo][Oo]%.[Gg][Li]/") or msg.text:match("[Aa][Dd][Ff]%.[Ll][Yy]/") or msg.text:match("[Bb][Ii][Tt]%.[Ll][Yy]") or msg.text:match("[Cc][Ff]%.[Ll][Yy]/") or msg.text:match("[Bb][Vv]%.[Vv][Cc]/") or msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm]%.[Mm][Ee]") 
+local bot = msg.text:match("?[Ss][Tt][Aa][Rr][Tt]=") or msg.text:match("?[Ss][Tt][Oo][Pp]=") 
+            if link and redis:get(rash) and not is_momod(msg) then 
+            delete_msg(msg.id, ok_cb, true) 
+            delete_msg(msg.id, ok_cb, true) 
+            delete_msg(msg.id, ok_cb, true) 
+            local dea = " 🔹عزيزي : "..msg.from.first_name.."".."\n".."🔹يمنع نشر (روابط - اعلانات - قنوات)🍃".."\n".."🔹التزم بالقوانين🚫 ".."\n".."🔹 يا : @"..(msg.from.username or " ") 
 reply_msg(monster, dea, ok_cb, true) 
-        end 
-
+        end
         return msg 
     end 
 
@@ -57,6 +58,7 @@ return {
     pre_process = pre_process 
 } 
 
--- By @XVIPER
+-- By @XVIPER 
 --Oscar Team 
-end
+end 
+    
